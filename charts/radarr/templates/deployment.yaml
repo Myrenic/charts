@@ -1,0 +1,20 @@
+spec:
+  containers:
+    - name: radarr
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
+      ports:
+        - containerPort: 7878
+          name: http
+      volumeMounts:
+        - name: media
+          mountPath: /media
+        - name: downloads
+          mountPath: /downloads
+  volumes:
+    - name: media
+      persistentVolumeClaim:
+        claimName: {{ include "radarr.fullname" . }}-media
+    - name: downloads
+      persistentVolumeClaim:
+        claimName: {{ include "radarr.fullname" . }}-downloads
