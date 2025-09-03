@@ -9,6 +9,6 @@ entries:
     name: radarr
     type: application
     urls:
-    - https://myrenic.github.io/charts/radarr-0.1.0.tgz
+    - https://myrenic.github.io/charts/charts/radarr/radarr-0.1.0.tgz
     version: 0.1.0
 generated: "2025-09-03T13:46:46.463896438Z"
